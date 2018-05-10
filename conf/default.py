@@ -30,7 +30,8 @@ BK_PAAS_HOST = 'http://paas.blueking.com:80'
 # 是否启用celery任务
 IS_USE_CELERY = True
 # 本地开发的 celery 的消息队列（RabbitMQ）信息
-BROKER_URL_DEV = 'amqp://guest:guest@127.0.0.1:5672/'
+#BROKER_URL_DEV = 'amqp://guest:guest@127.0.0.1:5672/'
+BROKER_URL_DEV = 'redis://localhost:6379/0'
 # TOCHANGE 调用celery任务的文件路径, List of modules to import when celery starts.
 CELERY_IMPORTS = (
     'home_application.celery_tasks',
@@ -108,6 +109,7 @@ INSTALLED_APPS = (
     'app_control',
     'account',
     'home_application',
+    'magic_app' ,
 )
 
 # ==============================================================================
